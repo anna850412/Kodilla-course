@@ -9,6 +9,10 @@ public class Calculator {
         this.b = b;
     }
 
+    public Calculator() {
+
+    }
+
     public int getA(){
         return this.a;
     }
