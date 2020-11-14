@@ -2,9 +2,12 @@ package com.kodilla.testing.library;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class BookLibrary {
+    public Map<LibraryUser,List<Book>> userBookMap = new HashMap<>();
     private LibraryDatabase libraryDatabase;
 
     public BookLibrary(LibraryDatabase libraryDatabase) {
@@ -18,6 +21,10 @@ public class BookLibrary {
         if (resultList.size() > 20) return bookList;
         bookList = resultList;
         return bookList;
+    }
+
+    public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
+       return userBookMap.get(libraryUser);
     }
 }
 

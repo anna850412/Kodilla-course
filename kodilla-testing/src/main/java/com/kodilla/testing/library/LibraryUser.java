@@ -37,6 +37,7 @@ public class LibraryUser {
         this.peselId = peselId;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
