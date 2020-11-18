@@ -47,13 +47,14 @@ public class CollectionTestSuite {
         numbers.add(7);
 
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
-
-        //When
-        List<Integer> result = oddNumbersExterminator.exterminate(numbers);
         List<Integer> expectedResult = new ArrayList<Integer>();
         expectedResult.add(2);
         expectedResult.add(4);
         expectedResult.add(6);
+
+        //When
+        List<Integer> result = oddNumbersExterminator.exterminate(numbers);
+
 
         //Then
         Assertions.assertEquals(expectedResult, result);

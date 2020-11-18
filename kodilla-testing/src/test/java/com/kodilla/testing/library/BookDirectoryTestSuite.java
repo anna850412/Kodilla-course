@@ -95,7 +95,7 @@ public class BookDirectoryTestSuite {
     @Test
     void testListBooksInHandsOfUserWithoutBook(){
         //Given
-        LibraryUser libraryUser = new LibraryUser("Anna","Swieta","85041204466");
+        LibraryUser libraryUser = new LibraryUser("Anna","Kolodziejczyk","85041204466");
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         bookLibrary.userBookMap.put(libraryUser,new ArrayList <Book>());
 
@@ -109,10 +109,29 @@ public class BookDirectoryTestSuite {
     @Test
     void testListBooksInHandsOfUserWith1Book(){
         //Given
-        LibraryUser libraryUser = new LibraryUser("Anna","Swieta","85041204466");
+        LibraryUser libraryUser = new LibraryUser("Anna","Kolodziejczyk","85041204466");
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         List<Book> listOfUserBook = new ArrayList <Book>();
         listOfUserBook.add(new Book("Title", "Author", 2006));
+        bookLibrary.userBookMap.put(libraryUser,listOfUserBook);
+
+        //When
+        List<Book> result = bookLibrary.listBooksInHandsOf(libraryUser);
+
+        //Then
+        assertEquals(listOfUserBook, result);
+    }
+    @Test
+    void testListBooksInHandsOfUserWith5Books(){
+        //Given
+        LibraryUser libraryUser = new LibraryUser("Anna","Kolodziejczyk","85041204466");
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
+        List<Book> listOfUserBook = new ArrayList <Book>();
+        listOfUserBook.add(new Book("Title1", "Author1", 2006));
+        listOfUserBook.add(new Book("Title2", "Author2", 2016));
+        listOfUserBook.add(new Book("Title3", "Author3", 2002));
+        listOfUserBook.add(new Book("Title4", "Author4", 2019));
+        listOfUserBook.add(new Book("Title5", "Author5", 2000));
         bookLibrary.userBookMap.put(libraryUser,listOfUserBook);
 
         //When
