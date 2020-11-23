@@ -1,8 +1,12 @@
 package com.kodilla.stream;
 
+import com.kodilla.stream.beautifier.PoemBeautifier;
+import com.kodilla.stream.beautifier.PoemDecorator;
+import com.kodilla.stream.calculator.Calculator;
 import com.kodilla.stream.forumuser.Forum;
 import com.kodilla.stream.forumuser.ForumUser;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -10,22 +14,29 @@ import java.util.stream.Collectors;
 
 public class StreamMain {
     public static void main(String[] args) {
-       // PoemBeautifier poemBeautifier = new PoemBeautifier();
-       // poemBeautifier.beautify((PoemDecorator poemDecorator)-> System.out.println("Welcome in my World"));
+        PoemBeautifier poemBeautifier = new PoemBeautifier();
+        poemBeautifier.beautify("Welcome in my World", (text) -> "ABC" + " " + text + " " + "ABC");
+        poemBeautifier.beautify("Welcome in my World", String::toUpperCase);
+        poemBeautifier.beautify("Welcome in my World", (text) -> text.toLowerCase());
+        poemBeautifier.beautify("Welcome in my World", (text) ->text.replace("World", "Life"));
+
+        Calculator calculator = new Calculator();
+        calculator.calculate(5,2, (a,b)-> a +b);
+        calculator.calculate(5,2, (a,b)-> a *b);
 
         List<ForumUser> forumUserList;
         ForumUser forumUser1 = new ForumUser(1,"Smith",'M',2000,3,25,0);
         ForumUser forumUser2 = new ForumUser(2,"Wnuk",'K',1990,1,1,3);
         ForumUser forumUser3 = new ForumUser(3,"Kowalski",'M',2005,9,12,10);
-        ForumUser forumUser4 = new ForumUser(4,"Herr",'M',2010,4,26,4);
+        ForumUser forumUser4 = new ForumUser(4,"Herr",'M',1999,4,26,4);
 
 
         Forum theForum = new Forum();
 
         theForum.getUserList().stream()
-                .map(sex -> 'M')
-//                .filter(forumUser -> forumUser.getBirthDate().getYear() < 2000)
-                .map(publishedPostNumber -> publishedPostNumber>1)
+                .filter(forumUser -> forumUser.getSex() == 'M')
+                .filter(forumUser -> forumUser.getBirthDate().isBefore(LocalDate.now().minusYears(20)))
+                .filter(forumUser -> forumUser.getPublishedPostNumber() > 1)
                 .forEach(System.out::println);
 
 

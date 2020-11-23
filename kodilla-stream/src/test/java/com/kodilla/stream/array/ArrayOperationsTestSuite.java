@@ -40,19 +40,27 @@ public class ArrayOperationsTestSuite {
 //        }
 //        System.out.println("Average: " + sum/ numbers.length);
 //        System.out.println("Sum: " + sum);
-
-        int[] ints = {13, 2, 7, 8, 25, 15, 16, 14, 30, 10, 6, 24, 2, 18, 29, 11, 16, 24, 3, 7};
-        Arrays
-                .stream(numbers)
-                .average()
-                .ifPresent(System.out::println);
+//
+//        int[] ints = {13, 2, 7, 8, 25, 15, 16, 14, 30, 10, 6, 24, 2, 18, 29, 11, 16, 24, 3, 7};
+//        Arrays
+//                .stream(numbers)
+//                .average()
+//                .ifPresent(System.out::println);
 
         //When
-        OptionalDouble expectedResult = Arrays.stream(numbers).average();
+        double expectedResult = 14;
    //     int result = ArrayOperations.getAverage(numbers);
 //        int result =  Arrays.stream(numbers).average();
-        OptionalDouble result = IntStream.range(0, numbers.length)
-                .average();
+        double result = IntStream.range(0, numbers.length)
+                .map(item -> numbers[item])
+                .average()
+                .getAsDouble();
+
+        IntStream.range(0, numbers.length)
+        .map(item -> numbers[item])
+                .forEach(v -> System.out.println(v));
+
+
         //Then
         Assertions.assertEquals(expectedResult,result);
     }
