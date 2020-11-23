@@ -11,9 +11,9 @@ import java.util.stream.IntStream;
 public class ArrayOperationsTestSuite {
     @DisplayName("Test provide average of int[] numbers")
     @Test
-    void testGetAverage(){
+    void testGetAverage() {
         //Given
-        int [] numbers = new int[20];
+        int[] numbers = new int[20];
         numbers[0] = 13;
         numbers[1] = 2;
         numbers[2] = 7;
@@ -34,34 +34,19 @@ public class ArrayOperationsTestSuite {
         numbers[17] = 24;
         numbers[18] = 3;
         numbers[19] = 7;
-//        int sum = 0;
-//        for(int i =0; i<20; i ++){
-//          sum = sum + i;
-//        }
-//        System.out.println("Average: " + sum/ numbers.length);
-//        System.out.println("Sum: " + sum);
-//
-//        int[] ints = {13, 2, 7, 8, 25, 15, 16, 14, 30, 10, 6, 24, 2, 18, 29, 11, 16, 24, 3, 7};
-//        Arrays
-//                .stream(numbers)
-//                .average()
-//                .ifPresent(System.out::println);
 
         //When
         double expectedResult = 14;
-   //     int result = ArrayOperations.getAverage(numbers);
-//        int result =  Arrays.stream(numbers).average();
         double result = IntStream.range(0, numbers.length)
                 .map(item -> numbers[item])
                 .average()
                 .getAsDouble();
 
         IntStream.range(0, numbers.length)
-        .map(item -> numbers[item])
+                .map(item -> numbers[item])
                 .forEach(v -> System.out.println(v));
 
-
         //Then
-        Assertions.assertEquals(expectedResult,result);
+        Assertions.assertEquals(expectedResult, result);
     }
 }
