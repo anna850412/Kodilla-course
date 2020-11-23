@@ -37,7 +37,7 @@ public class StreamMain {
                 .filter(forumUser -> forumUser.getSex() == 'M')
                 .filter(forumUser -> forumUser.getBirthDate().isBefore(LocalDate.now().minusYears(20)))
                 .filter(forumUser -> forumUser.getPublishedPostNumber() > 1)
-                .forEach(System.out::println);
+                .forEach(v -> System.out.println(v));
 
 
         Map<Integer, ForumUser> theForumMap = theForum.getUserList().stream()

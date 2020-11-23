@@ -18,14 +18,5 @@ public final class Country {
         return this.peopleQuantity;
     }
 
-//public List<Country> getCountryPopulation(){
-//        return countryPopulation.stream()
-//                .map(Country::getPeopleQuantity)
-//                .collect(Collectors.toList());
-//}
-//    public List<Continent> getContinentPopulation(){
-//        return continentPopulation.stream()
-//                .map(Continent::getPeopleQuantity)
-//                .collect(Collectors.toList());
     }
 
