@@ -30,24 +30,23 @@ public class StreamMain {
         ForumUser forumUser3 = new ForumUser(3,"Kowalski",'M',2005,9,12,10);
         ForumUser forumUser4 = new ForumUser(4,"Herr",'M',1999,4,26,4);
 
-
         Forum theForum = new Forum();
-
         theForum.getUserList().stream()
                 .filter(forumUser -> forumUser.getSex() == 'M')
                 .filter(forumUser -> forumUser.getBirthDate().isBefore(LocalDate.now().minusYears(20)))
-                .filter(forumUser -> forumUser.getPublishedPostNumber() > 1)
+                .filter(forumUser -> forumUser.getPublishedPostNumber() >= 1)
                 .forEach(v -> System.out.println(v));
 
-
         Map<Integer, ForumUser> theForumMap = theForum.getUserList().stream()
-                .filter(forumUser -> forumUser.getBirthDate().getYear() < 2000)
-                .collect(Collectors.toMap(ForumUser::getIdNumber, forumUser -> forumUser));             // [1]
+                .filter(forumUser -> forumUser.getSex() == 'M')
+                .filter(forumUser -> forumUser.getBirthDate().isBefore(LocalDate.now().minusYears(20)))
+                .filter(forumUser -> forumUser.getPublishedPostNumber() >= 1)
+                .collect(Collectors.toMap(ForumUser::getIdNumber, forumUser -> forumUser));
 
-        System.out.println("# elements: " + theForumMap.size());             // [2]
+        System.out.println("# elements: " + theForumMap.size());
         theForumMap.entrySet().stream()
-                .map(entry -> entry.getKey() + ": " + entry.getValue())                   // [3]
-                .forEach(System.out::println);                                            // [4]
+                .map(entry -> entry.getKey() + ": " + entry.getValue())
+                .forEach(System.out::println);
         }
 }
 

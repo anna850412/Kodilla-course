@@ -4,8 +4,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.OptionalDouble;
 import java.util.stream.IntStream;
 
 public class ArrayOperationsTestSuite {
