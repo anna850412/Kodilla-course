@@ -13,17 +13,22 @@ public class SecondChallengeTestSuite {
         void testSecondChallenge () {
             //Given
             SecondChallenge secondChallenge = new SecondChallenge();
-            try {
-                String result = secondChallenge.probablyIWillThrowException(1, 1.5);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+//            try {
+//                String result = secondChallenge.probablyIWillThrowException(1, 1.5);
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
             //When&Then
-//            Assertions.assertAll(
-//                    () -> assertThrows(ExceptionHandling.class, () -> secondChallenge.probablyIWillThrowException(1, 1.5)),
-//                    () -> assertThrows(ExceptionHandling.class, () -> secondChallenge.probablyIWillThrowException(null, 5)),
-//                    () -> assertDoesNotThrow(() -> secondChallenge.probablyIWillThrowException("a","b"))
-//            );
+            Assertions.assertAll(
+                    //obie liczby w zakresie
+                    () -> assertDoesNotThrow(() -> secondChallenge.probablyIWillThrowException(3, 1.5)),
+                    //obie poza zakresem
+                    () -> assertThrows(ExceptionHandling.class, () -> secondChallenge.probablyIWillThrowException(1.5, 5)),
+                    //x w zakresie, y poza
+                    () -> assertThrows(ExceptionHandling.class,() -> secondChallenge.probablyIWillThrowException(0.5, 2)),
+                    //x poza zakresem, y w zakresie
+                    () -> assertThrows(ExceptionHandling.class,() -> secondChallenge.probablyIWillThrowException(1.2, 1.5))
+            );
 //            assertAll(
 //                    () -> assertThrows(FileReaderException.class, () -> fileReader.readFile("nie_ma_takiego_pliku.txt")),
 //                    () -> assertThrows(FileReaderException.class, () -> fileReader.readFile(null)),

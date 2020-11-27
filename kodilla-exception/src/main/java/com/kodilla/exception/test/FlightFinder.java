@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class FlightFinder {
-    public void findFlight(Flight flight) throws RouteNotFoundException {
+    public Boolean findFlight(Flight flight) throws RouteNotFoundException {
 
         Map<String, Boolean> findAirportMap = new HashMap<>();
         findAirportMap.put("Miami", true);
@@ -27,7 +27,6 @@ public class FlightFinder {
                 else if(!allAirports.contains(flight.getArrivalAirport())) {
                     throw new RouteNotFoundException("Flight is not on list to Airport: " + flight.getArrivalAirport());
                 }
-
-        }
-
+        return findFlight(flight);
+    }
     }
