@@ -15,7 +15,6 @@ public class SecondChallengeTestSuite {
     void testSecondChallenge() {
         //Given
         SecondChallenge secondChallenge = new SecondChallenge();
-        ExceptionHandling exceptionHandling = new ExceptionHandling();
 
         //When&Then
         assertAll(
@@ -26,7 +25,9 @@ public class SecondChallengeTestSuite {
                 //x w zakresie, y poza
                 () -> assertThrows(Exception.class, () -> secondChallenge.probablyIWillThrowException(0.5, 1.51)),
                 //x poza zakresem, y w zakresie
-                () -> assertThrows(Exception.class, () -> secondChallenge.probablyIWillThrowException(1.99, 1.5))
+                () -> assertThrows(Exception.class, () -> secondChallenge.probablyIWillThrowException(1.99, 1.5)),
+                //x poza zakresem liczba ujemna, y w zakresie
+                () -> assertThrows(Exception.class, () -> secondChallenge.probablyIWillThrowException(-0.99, 1.5))
         );
 //            assertAll(
 //                    () -> assertThrows(FileReaderException.class, () -> fileReader.readFile("nie_ma_takiego_pliku.txt")),

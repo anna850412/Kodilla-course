@@ -3,12 +3,19 @@ package com.kodilla.exception.test;
 public class Application {
     public static void main(String[] args) throws RouteNotFoundException {
 
-        Flight flight = new Flight("Miami", "Warszawa");
-        Flight flight1 = null;
+        Flight flight = new Flight("Miami", "Lodz");
+       // Flight flight1 = null;
         FlightFinder flightFinder = new FlightFinder();
-       try {
-          flightFinder.findFlight(flight);
-          flightFinder.findFlight(flight1);
+
+        try {
+            System.out.println("Szukam lotu dla: " + flight);
+          boolean result = flightFinder.findFlight(flight);
+          if(result){
+              System.out.println("Lot znaleziono i jest takie połączenie.");
+          } else {
+              System.out.println("Lot znaleziono ale połączenie nie jest chwilowo dostępne.");
+          }
+    //      flightFinder.findFlight(flight1);
 
        } catch (RouteNotFoundException e){
            System.out.println("Selected Airport is not available");
