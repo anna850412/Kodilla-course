@@ -1,5 +1,7 @@
-package com.kodilla.exception.test;
+package com.kodilla.exception.test.io;
 
+import com.kodilla.exception.test.ExceptionHandling;
+import com.kodilla.exception.test.SecondChallenge;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -8,19 +10,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class SecondChallengeTestSuite {
 
-    @DisplayName("Text if Second Challenge is working properlly")
+    @DisplayName("Test if Second Challenge is working properlly")
     @Test
     void testSecondChallenge() {
         //Given
         SecondChallenge secondChallenge = new SecondChallenge();
         ExceptionHandling exceptionHandling = new ExceptionHandling();
-//            try {
-//                String result = secondChallenge.probablyIWillThrowException(1, 1.5);
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
+
         //When&Then
-        Assertions.assertAll(
+        assertAll(
                 //obie liczby w zakresie
                 () -> assertThrows(Exception.class, () -> secondChallenge.probablyIWillThrowException(3, 1.5)),
                 //obie poza zakresem

@@ -9,9 +9,8 @@ public class ExceptionHandling {
             String result = secondChallenge.probablyIWillThrowException(x, y);
         } catch (Exception e) {
             System.out.println("Probably will throw exception");
-            ;
         } finally {
-            System.out.println("FInally!");
+            System.out.println("Finally!");
         }
     }
 }
