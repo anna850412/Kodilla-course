@@ -1,15 +1,17 @@
 package com.kodilla.exception.test;
 
-public class ExceptionHandling extends Exception{
-    public static void main (String [] args) {
+public class ExceptionHandling {
+    public void handleErrors(double x, double y) {
+
         SecondChallenge secondChallenge = new SecondChallenge();
+
         try {
-            String result = secondChallenge.probablyIWillThrowException(1.5, 1.5);
+            String result = secondChallenge.probablyIWillThrowException(x, y);
         } catch (Exception e) {
             System.out.println("Probably will throw exception");
             ;
         } finally {
-            System.out.println("Done!");
+            System.out.println("FInally!");
         }
-
-    }}
+    }
+}

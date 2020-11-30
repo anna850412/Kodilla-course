@@ -19,12 +19,13 @@ public class World {
     public void addContinent(Continent continent) {
         continents.add(continent);
     }
-    public BigDecimal getPeopleQuantity(){
-           BigDecimal totalPeople = continents.stream()
-                   .flatMap(continent -> continent.getCountries().stream())
-                   .map(Country::getPeopleQuantity)
-                   .reduce(BigDecimal.ZERO, (sum,current) -> sum = sum.add(current));
-           return totalPeople;
-        }
+
+    public BigDecimal getPeopleQuantity() {
+        BigDecimal totalPeople = continents.stream()
+                .flatMap(continent -> continent.getCountries().stream())
+                .map(Country::getPeopleQuantity)
+                .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current));
+        return totalPeople;
+    }
 
 }

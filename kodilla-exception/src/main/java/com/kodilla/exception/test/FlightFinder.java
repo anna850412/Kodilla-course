@@ -15,18 +15,12 @@ public class FlightFinder {
         findAirportMap.put("Lodz", false);
         findAirportMap.put("NewYork", true);
 
-        List<String> allAirports = new ArrayList<>();
-            for (Map.Entry<String, Boolean> entry : findAirportMap.entrySet()) {
-                System.out.println("Airport: " + entry.getKey() + "Exists: " + entry.getValue());
-                allAirports.add(entry.getKey());
-            }
-
-                if(!allAirports.contains(flight.getDepartureAirport())){
-                    throw new RouteNotFoundException("Flight is not on list from Airport: " + flight.getDepartureAirport());
+                if(!findAirportMap.containsKey(flight.getDepartureAirport())){
+                    throw new RouteNotFoundException("Flight departure airport is not on Airports list:" + flight.getDepartureAirport());
                 }
-                else if(!allAirports.contains(flight.getArrivalAirport())) {
-                    throw new RouteNotFoundException("Flight is not on list to Airport: " + flight.getArrivalAirport());
+                else if(!findAirportMap.containsKey(flight.getArrivalAirport())) {
+                    throw new RouteNotFoundException("Flight arrival airport is not on Airports list: " + flight.getArrivalAirport());
                 }
-        return findFlight(flight);
+        return findAirportMap.get(flight.getArrivalAirport());
     }
     }

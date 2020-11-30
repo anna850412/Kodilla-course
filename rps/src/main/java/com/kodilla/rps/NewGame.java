@@ -1,8 +1,10 @@
 package com.kodilla.rps;
 
-public class NewGame extends GameRules {
+public class NewGame extends Rules {
     public void runNewGame(){
-        AllMessages message;
-      //  message.startGame();
+        AllMessages allMessages = new AllMessages();
+      allMessages.startGame();
+      allMessages.getNameOfFirstPlayer();
+
     }
 }

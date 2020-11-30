@@ -2,7 +2,7 @@ package com.kodilla.rps;
 
 import java.util.Scanner;
 
-public class GameRules {
+public class Rules {
     int a;
     int b;
     int c;

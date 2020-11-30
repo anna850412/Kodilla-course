@@ -7,7 +7,8 @@ import java.util.List;
 public class Continent {
     private final String continentName;
     private List<Country> countries;
-    public Continent(final String continentName, List<Country> countries ) {
+
+    public Continent(final String continentName, List<Country> countries) {
         this.continentName = continentName;
         this.countries = countries;
     }
@@ -26,6 +27,6 @@ public class Continent {
     }
 
     public void addCountry(Country country) {
-         countries.add(country);
+        countries.add(country);
     }
 }
