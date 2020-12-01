@@ -53,7 +53,6 @@ public class CollectionTestSuite {
         //When
         List<Integer> result = oddNumbersExterminator.exterminate(numbers);
 
-
         //Then
         Assertions.assertEquals(expectedResult, result);
     }
@@ -75,7 +74,6 @@ public class CollectionTestSuite {
         //Then
         Assertions.assertEquals(expectedResult, result);
     }
-
 }
 
 

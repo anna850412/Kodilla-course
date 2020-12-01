@@ -17,7 +17,7 @@ public class StreamMain {
         PoemBeautifier poemBeautifier = new PoemBeautifier();
         poemBeautifier.beautify("Welcome in my World", (text) -> "ABC" + " " + text + " " + "ABC");
         poemBeautifier.beautify("My Name is Anna", String::toUpperCase);
-        poemBeautifier.beautify("nothing is important in this sentence", (text) -> text.toLowerCase());
+        poemBeautifier.beautify("NOTHING IS IMPORTANT IN THIS SENTENCE", (text) -> text.toLowerCase());
         poemBeautifier.beautify("Welcome in my World", (text) ->text.replace("World", "Life"));
 
         Calculator calculator = new Calculator();

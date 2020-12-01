@@ -1,5 +1,4 @@
 package com.kodilla.testing.weather.stub;
-
 import java.util.*;
 
 
@@ -53,8 +52,5 @@ public class WeatherForecast {
             median = averageList.get(index);
         }
         return median;
-
-
     }
-
 }

@@ -1,35 +1,49 @@
 package com.kodilla.rps;
 
-import java.util.Scanner;
+public abstract class Rules {
+   // protected int [][] winRulesTab;
+    protected int [][] rules;
+    protected int firstPlayerWin = 0;
+    protected int secondPlayerWin = 0;
+    protected AllMessages message = new AllMessages();
 
-public class Rules {
-    int a;
-    int b;
-    int c;
+/*      \gracz 2
+gracz 1/ papier | kamień | nożyce
+papier      0   |   1    |  -1
+kamień     -1   |   0    |   1
+nożyce      1   |  -1   |   0
 
-    Scanner rps = new Scanner(System.in);
+ */
+    public Rules() {
+        int[][] rules = new int[][]{
+                {0, 1, -1},
+                {-1, 0, 1},
+                {1, -1, 0}
+        };
+//    this.winRulesTab = new int [3][3];
+//    this.winRulesTab[0][0] = 0;
+//    this.winRulesTab[0][1] = 1;
+//    this.winRulesTab[0][2] = -1;
+//    this.winRulesTab[1][0] = -1;
+//    this.winRulesTab[1][1] = 0;
+//    this.winRulesTab[1][2] = 1;
+//    this.winRulesTab[2][0] = 1;
+//    this.winRulesTab[2][1] = -1;
+//    this.winRulesTab[2][2] = 0;
+//    }
 
-//        System.out.println("Fill in 1 to choose rock");
-//    int a = rps.nextInt();
-//        System.out.println("Fill in 2 to choose paper");
-//    int b = rps.nextInt();
-//        System.out.println("Fill in 3 to choose scissors");
-//    int c = rps.nextInt();
-//
-//       if(a == b ||a == c ||b == c)
-//
-//    {
-//        System.out.println("Remis");
-//
-//    }
-//        else if(a < b || b < c || c < a)
-//
-//    {
-//        System.out.println("Win");
-//    }
-//        else
-//
-//    {
-//        System.out.println("Loss");
-//    }
-}
+    }
+    public int whoWinTheRound(String firstPlayerChoose, String secondPlayerChoose){
+        int result = whoWinTheRound(firstPlayerChoose, secondPlayerChoose);
+        if(result == -1){
+            secondPlayerWin++;
+            message.secondPlayerWin();
+        } else if (result == 1){
+            firstPlayerWin++;
+            message.firstPlayerWin();
+        } else {
+            message.draw();
+        }
+        return result;
+    }
+    }

@@ -4,8 +4,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @DisplayName("Test functionality of shape collector")
 public class ShapeCollectorTestSuite {
@@ -75,7 +73,5 @@ public class ShapeCollectorTestSuite {
         String expectedResult = "[Circle{r=1.0}, Triangle{a=1, h=3}, Square{a=1.0}]";
         //Then
         Assertions.assertEquals(expectedResult, result);
-
     }
-
 }

@@ -25,6 +25,16 @@ public class AllMessages {
                 "\n\'x\' End the game" +
                 "\n\'n\' End this game and start new game");
     }
+    public void gameResult(int firstPlayerWins, int secondPlayerWins){
+        System.out.println("Current result: " +
+                "\nFirst player wins " + firstPlayerWins + " round(s)" +
+                "\nSecond player wins " + secondPlayerWins + " round(s)");
+    }
+    public void nextMove(){
+        System.out.println("What are you going to do?" +
+                "\n\'n\' Start new game" +
+                "\n\'x\' End the game");
+    }
 
     public void firstPlayerName() {
         System.out.println("First player Name is: ");
@@ -41,17 +51,21 @@ public class AllMessages {
     public void secondPlayerWin() {
         System.out.println("Second player win");
     }
+    public void draw(){
+        System.out.println("It is draw");
+    }
+
 
     public void endOfTheGame() {
         System.out.println("This game is ended");
     }
 
-    public void firstPlayerChoice() {
-        System.out.println("First player choice");
+    public void firstPlayerMove() {
+        System.out.println("First player move");
     }
 
-    public void secondPlayerChoice() {
-        System.out.println("Second player choice");
+    public void secondPlayerMove() {
+        System.out.println("Second player move");
     }
 
     public void mistake() {
