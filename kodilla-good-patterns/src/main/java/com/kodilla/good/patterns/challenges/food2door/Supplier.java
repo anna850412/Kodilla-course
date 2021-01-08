@@ -1,16 +1,12 @@
 package com.kodilla.good.patterns.challenges.food2door;
 
-public class Supplier implements OrderRequest{
+public class Supplier {
     private String supplierName;
     private Product product;
-    private Shop shop;
-    private Order oder;
 
-    public Supplier(String supplierName, Product product, Shop shop, Order oder) {
+    public Supplier(String supplierName, Product product) {
         this.supplierName = supplierName;
         this.product = product;
-        this.shop = shop;
-        this.oder = oder;
     }
 
     public String getSupplierName() {
@@ -21,16 +17,8 @@ public class Supplier implements OrderRequest{
         return product;
     }
 
-    public Shop getShop() {
-        return shop;
-    }
 
-    public Order getOder() {
-        return oder;
-    }
-
-    @Override
-    public void process() {
-    shop.getOrder();
+    public void process(Product product) {
+        System.out.println("zamowienie zostało złożone");
     }
 }
