@@ -1,6 +1,6 @@
-package com.kodilla.good.patterns.challenges;
+package com.kodilla.good.patterns.challenges.order;
 
-public abstract class OrderProcessor {
+public class OrderProcessor {
     private InformationService informationService;
     private OrderService orderService;
     private OrderRepository orderRepository;

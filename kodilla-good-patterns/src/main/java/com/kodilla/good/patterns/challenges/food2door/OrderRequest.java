@@ -1,5 +1,2 @@
-package com.kodilla.good.patterns.challenges.food2door;
-
-public interface OrderRequest {
-    public void process();
+package com.kodilla.good.patterns.challenges.food2door;public class OrderRequest {
 }
