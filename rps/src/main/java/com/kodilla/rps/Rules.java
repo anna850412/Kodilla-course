@@ -5,13 +5,15 @@ public abstract class Rules {
     protected int [][] rules;
     protected int firstPlayerWin = 0;
     protected int secondPlayerWin = 0;
+    Player firstPlayer;
+    Player secondPlayer;
     protected AllMessages message = new AllMessages();
 
 /*      \gracz 2
 gracz 1/ papier | kamień | nożyce
 papier      0   |   1    |  -1
 kamień     -1   |   0    |   1
-nożyce      1   |  -1   |   0
+nożyce      1   |  -1    |   0
 
  */
     public Rules() {
@@ -33,8 +35,12 @@ nożyce      1   |  -1   |   0
 //    }
 
     }
-    public int whoWinTheRound(String firstPlayerChoose, String secondPlayerChoose){
-        int result = whoWinTheRound(firstPlayerChoose, secondPlayerChoose);
+    public Player whoWinTheRound(Player firstPlayer, Player secondPlayer, String firstPlayerChoose, String secondPlayerChoose){
+        int firstInt = (int)firstPlayerChoose.charAt(0);
+        int secondInt = (int)secondPlayerChoose.charAt(0);
+
+        int result = rules[firstInt -1][secondInt-1];
+
         if(result == -1){
             secondPlayerWin++;
             message.secondPlayerWin();
@@ -44,6 +50,6 @@ nożyce      1   |  -1   |   0
         } else {
             message.draw();
         }
-        return result;
+        return null;
     }
     }
