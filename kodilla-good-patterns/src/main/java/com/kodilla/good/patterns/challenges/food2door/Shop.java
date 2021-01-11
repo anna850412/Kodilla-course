@@ -1,44 +1,28 @@
 package com.kodilla.good.patterns.challenges.food2door;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public abstract class Shop {
     private String shopName;
-    private List<Product> productList;
-    private List<Supplier> supplierList;
+    private Map<Product, Supplier> products;
 
-    public Shop(String shopName, List<Product> productList, List<Supplier> supplierList) {
+    public Shop(String shopName) {
         this.shopName = shopName;
-        this.productList = productList;
-        this.supplierList = supplierList;
+        this.products = new HashMap<>();
     }
 
-    public void setSupplierList(List<Supplier> supplierList) {
-        this.supplierList = supplierList;
+    public void add(Product product, Supplier supplier) {
+        this.products.put(product, supplier);
     }
 
-    public void setProductList(List<Product> productList) {
-        this.productList = productList;
-    }
 
-    public String getShopName() {
-        return shopName;
-    }
-
-    public List<Product> getProductList() {
-        return productList;
-    }
-
-    public List<Supplier> getSupplierList() {
-        return supplierList;
-    }
-
-    public void processOrder(Order order) {
-        if (productList.contains(order.getProductList())) {
-            System.out.println("przekazujemy zamowienie + " + "" + order + "z datą" + "" + order.getOrderDate());
-//            supplier.process(order.getProduct());
-        } else {
-            System.out.println("nie można złożyć zamówienia w tym sklepie");
+    public OrderResultDto process(Product product) {
+        OrderResultDto results = new OrderResultDto();
+        if (products.containsKey(product)) {
+            ResultDto result = products.get(product).process(product);
+            results.addResult(result);
         }
+        return results;
     }
 }
