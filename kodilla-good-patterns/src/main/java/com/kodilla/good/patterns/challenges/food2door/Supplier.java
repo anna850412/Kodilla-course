@@ -1,22 +1,26 @@
 package com.kodilla.good.patterns.challenges.food2door;
 
-public class Supplier {
-    private String supplierName;
-    private Product product;
+import java.util.List;
 
-    public Supplier(String supplierName, Product product) {
+public abstract class Supplier {
+    public String supplierName;
+    public List<Product> productList;
+
+    public Supplier() {
+    }
+
+    public Supplier(String supplierName, List<Product> productList) {
         this.supplierName = supplierName;
-        this.product = product;
+        this.productList = productList;
     }
 
     public String getSupplierName() {
         return supplierName;
     }
 
-    public Product getProduct() {
-        return product;
+    public List<Product> getProductList() {
+        return productList;
     }
-
 
     public void process(Product product) {
         System.out.println("zamowienie zostało złożone");

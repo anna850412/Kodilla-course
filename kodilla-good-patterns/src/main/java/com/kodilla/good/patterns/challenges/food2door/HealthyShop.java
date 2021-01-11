@@ -14,7 +14,7 @@ public class HealthyShop extends Shop{
 
     @Override
     public void setProductList(List<Product> productList) {
-        super.setProductList((List<Product>) new Product("onion",'V', 2,10));
-        super.setProductList((List<Product>) new Product("apple",'F', 10, 1));
+        super.setProductList((List<Product>) new Product("onion",'V', 2));
+        super.setProductList((List<Product>) new Product("apple",'F', 10));
     }
 }

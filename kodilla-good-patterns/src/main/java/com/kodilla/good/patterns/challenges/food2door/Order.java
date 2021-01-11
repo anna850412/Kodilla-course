@@ -1,24 +1,31 @@
 package com.kodilla.good.patterns.challenges.food2door;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class Order {
-    private Shop shop;
-    private Product product;
+    private User user;
+    private List<Product> productList;
+    private Supplier supplier;
     private LocalDateTime orderDate;
 
-    public Order(Shop shop, Product product, LocalDateTime orderDate) {
-        this.shop = shop;
-        this.product = product;
+    public Order(User user, List<Product> productList, Supplier supplier, LocalDateTime orderDate) {
+        this.user = user;
+        this.productList = productList;
+        this.supplier = supplier;
         this.orderDate = orderDate;
     }
 
-    public Shop getShop() {
-        return shop;
+    public User getUser() {
+        return user;
     }
 
-    public Product getProduct() {
-        return product;
+    public Supplier getSupplier() {
+        return supplier;
+    }
+
+    public List<Product> getProductList() {
+        return productList;
     }
 
     public LocalDateTime getOrderDate() {
@@ -28,11 +35,10 @@ public class Order {
     @Override
     public String toString() {
         return "Order{" +
-                "shop=" + shop +
-                ", product=" + product +
+                "user=" + user +
+                ", product List=" + productList +
+                ", supplier=" + supplier +
                 ", orderDate=" + orderDate +
                 '}';
     }
-
-
 }

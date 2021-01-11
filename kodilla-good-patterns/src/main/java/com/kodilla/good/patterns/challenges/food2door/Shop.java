@@ -7,22 +7,20 @@ public abstract class Shop {
     private List<Product> productList;
     private List<Supplier> supplierList;
 
-    public void setSupplierList(List<Supplier> supplierList) {
-        this.supplierList = supplierList;
-    }
-
     public Shop(String shopName, List<Product> productList, List<Supplier> supplierList) {
         this.shopName = shopName;
         this.productList = productList;
         this.supplierList = supplierList;
     }
 
+    public void setSupplierList(List<Supplier> supplierList) {
+        this.supplierList = supplierList;
+    }
+
     public void setProductList(List<Product> productList) {
         this.productList = productList;
     }
-//    productList.add();
-//    supplierList.add("HealthyShop");
-    Supplier supplier = new Supplier("ABC", new Product("RTV",'E', 20000, 1));
+
     public String getShopName() {
         return shopName;
     }
@@ -36,9 +34,9 @@ public abstract class Shop {
     }
 
     public void processOrder(Order order) {
-        if (productList.contains(order.getProduct())) {
+        if (productList.contains(order.getProductList())) {
             System.out.println("przekazujemy zamowienie + " + "" + order + "z datą" + "" + order.getOrderDate());
-            supplier.process(order.getProduct());
+//            supplier.process(order.getProduct());
         } else {
             System.out.println("nie można złożyć zamówienia w tym sklepie");
         }

@@ -2,9 +2,15 @@ package com.kodilla.good.patterns.challenges.food2door;
 
 public class User {
     private String userName;
+    private String address;
 
-    public User(String userName) {
+    public User(String userName, String address) {
         this.userName = userName;
+        this.address = address;
+    }
+
+    public String getAddress() {
+        return address;
     }
 
     public String getUserName() {
@@ -15,6 +21,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "userName='" + userName + '\'' +
+                ", address='" + address + '\'' +
                 '}';
     }
 }

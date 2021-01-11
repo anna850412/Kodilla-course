@@ -1,19 +1,21 @@
 package com.kodilla.good.patterns.challenges.food2door;
 
+import java.util.List;
+
 public class OrderRequest {
     private User user;
-    private Product product;
+    private List<Product> productList;
 
-    public OrderRequest(User user, Product product) {
+    public OrderRequest(User user, List<Product> productList) {
         this.user = user;
-        this.product = product;
+        this.productList = productList;
     }
 
     public User getUser() {
         return user;
     }
 
-    public Product getProduct() {
-        return product;
+    public List<Product> getProductList() {
+        return productList;
     }
 }
