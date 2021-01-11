@@ -3,25 +3,26 @@ package com.kodilla.good.patterns.challenges.flight;
 public class Flight {
     private String departureAirport;
     private String arrivalAirport;
+    private Integer flightNo;
 
-    public Flight(String departureAirport, String arrivalAirport) {
+    public Flight(String departureAirport, String arrivalAirport, Integer flightNo) {
         this.departureAirport = departureAirport;
         this.arrivalAirport = arrivalAirport;
+        this.flightNo = flightNo;
     }
 
-    public boolean getDepartureAirport() {
-        return Boolean.parseBoolean(departureAirport);
+    public String getDepartureAirport() {
+        return departureAirport;
     }
 
-    public boolean getArrivalAirport() {
-        return Boolean.parseBoolean(arrivalAirport);
+    public String getArrivalAirport() {
+        return arrivalAirport;
     }
 
     @Override
     public String toString() {
-        return "Flight{" +
-                "departureAirport='" + departureAirport + '\'' +
-                ", arrivalAirport='" + arrivalAirport + '\'' +
-                '}';
+        return "Flight number: " + flightNo +
+                " from: " + departureAirport +
+                " to: " + arrivalAirport;
     }
 }

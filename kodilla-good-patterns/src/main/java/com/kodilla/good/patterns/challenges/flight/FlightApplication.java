@@ -1,27 +1,28 @@
 package com.kodilla.good.patterns.challenges.flight;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class FlightApplication {
-    public static void main(String[] args) throws RouteNotFoundException {
-        Flight flight = new Flight("Paryż", "Poznań");
-        FlightFinder flightFinder = new FlightFinder();
-        try {
-            System.out.println("Szukam lotu dla: " + " " + flight);
-            boolean result = flightFinder.findFlight(flight);
-            if (result) {
-                System.out.println("Lot znaleziono i jest takie połączenie");
-            } else {
-                System.out.println("Nie ma takiego lotu");
-            }
-        } catch (RouteNotFoundException e) {
-            if(!flight.getArrivalAirport()) {
-                System.out.println("Selected Arrival Airport is not available: " + " " + flight.getArrivalAirport());
-            } else if(!flight.getDepartureAirport()){
-                System.out.println("Selected Departure Airport is not available: " + " " + flight.getDepartureAirport());
-            }
-        } catch (NullPointerException e) {
-            System.out.println("We got Null pointer exception");
-        } finally {
-            System.out.println("Flight finder ended");
-        }
+    public static void main(String[] args)  {
+        Set<Flight> flights = new HashSet<>();
+        flights.add(new Flight("Warszawa", "Londyn", 1));
+        flights.add(new Flight("Londyn", "Paryż", 2));
+        flights.add(new Flight("Paryż", "Berlin", 3));
+        flights.add(new Flight("Berlin", "Londyn", 4));
+        flights.add(new Flight("Warszawa", "Berlin", 5));
+        flights.add(new Flight("Berlin", "Paryż", 6));
+
+        FlightFinder flightFinder = new FlightFinder(flights);
+        Set<Flight> flightsFromWarszawa = flightFinder.findFlightFromAirport("Warszawa");
+        Set<Flight> flightsToBerlin = flightFinder.findFlightToAirport("Berlin");
+        Set<Flight> flightsFromWarszawaToParyż = flightFinder.findStopoverAirport("Warszawa", "Paryż");
+        System.out.println("Loty z Warszawy: ");
+        System.out.println(flightsFromWarszawa);
+        System.out.println("Loty do Berlina: ");
+        System.out.println(flightsToBerlin);
+        System.out.println("Loty z Warszawy do Paryża z przesiadką");
+        System.out.println(flightsFromWarszawaToParyż);
+
     }
 }

@@ -5,36 +5,51 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class FlightFinder {
-    Set<String> findDepartureAirport;
-    Set<String> findArrivalAirport;
+    Set<Flight> flights;
 
-    public Boolean findFlight(Flight flight) throws RouteNotFoundException {
-        Set<Flight> findAirport = new HashSet<>();
-        findAirport.add(new Flight("Warszawa", "Londyn"));
-        findAirport.add(new Flight("Londyn", "Paryż"));
-        findAirport.add(new Flight("Paryż", "Berlin"));
-        findAirport.add(new Flight("Berlin", "Londyn"));
-        findAirport.add(new Flight("Warszawa", "Berlin"));
-
-        if(!findAirport.contains(flight.getArrivalAirport())){
-            throw new RouteNotFoundException("Flight arrival airport is not on Airports list: " + flight.getArrivalAirport());
-        } else if (!!findAirport.contains(flight.getDepartureAirport())){
-            throw new RouteNotFoundException("Flight departure airport is not on Airports list:" + flight.getDepartureAirport());
-        }   return findAirport.contains(flight);
-
+    public FlightFinder(Set<Flight> flights) {
+        this.flights = flights;
     }
-//    public Set<String> findArrivalAirport(){
-//                findAirport.stream()
-//                .map(n -> flight.getArrivalAirport())
-//                .collect(Collectors.toSet());
-//                return findArrivalAirport;
-//    }
-//    public Set<String> findDepartureAirport(){
-//        Set<String> findDepartureAirport = findAirport.stream()
-//                .map(m->flight.getDepartureAirport())
-//                .collect(Collectors.toSet());
-//        return findDepartureAirport;
-//    }
+
+    public Set<Flight> findFlightFromAirport(String searchedDepartureAirport) {
+
+        return flights.stream()
+                .filter(n -> n.getDepartureAirport() == searchedDepartureAirport)
+                .collect(Collectors.toSet());
+    }
+
+    public Set<Flight> findFlightToAirport(String searchedArrivalAirport) {
+
+        return flights.stream()
+                .filter(n -> n.getArrivalAirport() == searchedArrivalAirport)
+                .collect(Collectors.toSet());
+    }
+
+    public Set<Flight> findStopoverAirport(String searchedDepartureAirport, String searchedArrivalAirport) {
+        Set<Flight> startFlights = findFlightFromAirport(searchedDepartureAirport).stream()
+                .filter(n -> n.getArrivalAirport() != searchedArrivalAirport)
+                .collect(Collectors.toSet());
+
+
+        Set<Flight> endFlights = findFlightToAirport(searchedArrivalAirport).stream()
+                .filter(n -> n.getDepartureAirport() != searchedDepartureAirport)
+                .collect(Collectors.toSet());
+
+        Set<Flight> firstPartOfTrip = startFlights.stream()
+                .filter(flight -> endFlights.stream()
+                        .map(t -> t.getDepartureAirport())
+                        .collect(Collectors.toList()).contains(flight.getArrivalAirport()))
+                .collect(Collectors.toSet());
+        Set<Flight> secondPartOfTrip = endFlights.stream()
+                .filter(flight -> startFlights.stream()
+                        .map(t -> t.getArrivalAirport())
+                        .collect(Collectors.toList()).contains(flight.getDepartureAirport()))
+                .collect(Collectors.toSet());
+        return new HashSet<>() {{
+            addAll(secondPartOfTrip);
+            addAll(firstPartOfTrip);
+        }};
+    }
 
     @Override
     public int hashCode() {
