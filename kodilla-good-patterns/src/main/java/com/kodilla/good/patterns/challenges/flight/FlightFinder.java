@@ -14,25 +14,25 @@ public class FlightFinder {
     public Set<Flight> findFlightFromAirport(String searchedDepartureAirport) {
 
         return flights.stream()
-                .filter(n -> n.getDepartureAirport() == searchedDepartureAirport)
+                .filter(n -> n.getDepartureAirport().equals(searchedDepartureAirport))
                 .collect(Collectors.toSet());
     }
 
     public Set<Flight> findFlightToAirport(String searchedArrivalAirport) {
 
         return flights.stream()
-                .filter(n -> n.getArrivalAirport() == searchedArrivalAirport)
+                .filter(n -> n.getArrivalAirport().equals(searchedArrivalAirport))
                 .collect(Collectors.toSet());
     }
 
     public Set<Flight> findStopoverAirport(String searchedDepartureAirport, String searchedArrivalAirport) {
         Set<Flight> startFlights = findFlightFromAirport(searchedDepartureAirport).stream()
-                .filter(n -> n.getArrivalAirport() != searchedArrivalAirport)
+                .filter(n -> !n.getArrivalAirport().equals(searchedArrivalAirport))
                 .collect(Collectors.toSet());
 
 
         Set<Flight> endFlights = findFlightToAirport(searchedArrivalAirport).stream()
-                .filter(n -> n.getDepartureAirport() != searchedDepartureAirport)
+                .filter(n -> !n.getDepartureAirport().equals(searchedDepartureAirport))
                 .collect(Collectors.toSet());
 
         Set<Flight> firstPartOfTrip = startFlights.stream()
