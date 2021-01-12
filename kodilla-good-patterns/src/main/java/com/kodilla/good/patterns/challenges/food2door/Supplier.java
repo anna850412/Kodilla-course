@@ -22,7 +22,10 @@ public abstract class Supplier {
         return productList;
     }
 
-    public void process(Product product) {
-        System.out.println("zamowienie zostało złożone");
+    public ResultDto process(Product product) {
+        if (productList.contains(product)) {
+            return new ResultDto(product, true);
+        }
+        return new ResultDto(product, false);
     }
 }
