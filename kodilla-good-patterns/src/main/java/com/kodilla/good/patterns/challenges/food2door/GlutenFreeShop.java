@@ -1,10 +1,10 @@
 package com.kodilla.good.patterns.challenges.food2door;
 
-import java.util.List;
+import java.util.Map;
 
 public class GlutenFreeShop extends Shop {
-    public GlutenFreeShop(String shopName, List<Product> productList, List<Supplier> supplierList) {
-        super(shopName, productList, supplierList);
+    public GlutenFreeShop(String shopName, Map<Product, Supplier> products) {
+        super(shopName, products);
     }
 
 }

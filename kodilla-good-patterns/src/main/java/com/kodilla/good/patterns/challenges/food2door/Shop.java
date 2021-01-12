@@ -7,7 +7,7 @@ public abstract class Shop {
     private String shopName;
     private Map<Product, Supplier> products;
 
-    public Shop(String shopName) {
+    public Shop(String shopName, Map<Product, Supplier> products) {
         this.shopName = shopName;
         this.products = new HashMap<>();
     }
