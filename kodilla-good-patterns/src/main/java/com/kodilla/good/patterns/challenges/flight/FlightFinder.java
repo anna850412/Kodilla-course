@@ -51,6 +51,19 @@ public class FlightFinder {
         }};
     }
 
+    public Set<Flight> forEachFindStopoverAirport(String searchedDepartureAirport, String searchedArrivalAirport) {
+            Set<Flight> flightStopover = new HashSet<>();
+            for(Flight flightFrom : findFlightFromAirport(searchedDepartureAirport)){
+                for(Flight flightTo : findFlightToAirport(searchedArrivalAirport)) {
+        if (flightFrom.getArrivalAirport().equals(flightTo.getDepartureAirport())){
+             flightStopover.add(flightFrom);
+            flightStopover.add(flightTo);
+        };
+            }
+        }
+            return forEachFindStopoverAirport(searchedDepartureAirport, searchedArrivalAirport);
+    }
+
     @Override
     public int hashCode() {
         return super.hashCode();

@@ -18,7 +18,6 @@ public class FlightApplication {
         Set<Flight> flightsFromWarszawa = flightFinder.findFlightFromAirport("Warszawa");
         Set<Flight> flightsToBerlin = flightFinder.findFlightToAirport("Berlin");
         Set<Flight> flightsToParis = flightFinder.findFlightToAirport("Paryż");
-//        Set<Flight> flightsFromWraszawaToParisStopover = flightsFromWarszawa.forEach(flightsToParis);
 
         Set<Flight> flightsFromWarszawaToParyż = flightFinder.findStopoverAirport("Warszawa", "Paryż");
         System.out.println("Loty z Warszawy: ");
