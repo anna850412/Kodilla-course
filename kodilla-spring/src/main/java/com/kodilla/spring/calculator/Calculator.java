@@ -8,20 +8,16 @@ public final class Calculator {
     @Autowired
     private Display display;
 
-    public void addAtoB(){
-    double val = display.add(3,2);
-    System.out.println(val);
-}
-public void substractAFromB(){
-    double val = display.sub(5,1);
-    System.out.println(val);
-}
-public void multiplyAByB(){
-    double val = display.mul(2,2);
-    display.displayValue(val);
-}
-public void divideAbyB(){
-    double val = display.div(6,2);
-    display.displayValue(val);
-}
+    public double add(double a, double b){
+        return a+b;
+    }
+    public double sub(double a, double b){
+        return a-b;
+    }
+    public double mul(double a, double b){
+        return a*b;
+    }
+    public double div(double a, double b){
+        return a/b;
+    }
 }
