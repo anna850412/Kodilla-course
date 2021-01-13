@@ -1,0 +1,197 @@
+[33mcommit 125d965e5164113efa6717151ed63ff1019bfff9[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Mon Jan 11 15:36:42 2021 +0100
+
+    changes in stream from == to equals
+
+[33mcommit 4d6a956766d8afdc8ade67049952958283513a84[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Mon Jan 11 13:21:13 2021 +0100
+
+    food2door all classes no functionality
+
+[33mcommit 168ea82e94562f6a684f7cf555d0197494fbe053[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Mon Jan 11 12:11:42 2021 +0100
+
+    13.5 flights
+
+[33mcommit ee1284668e567375a9c872fe30c1782e1c222346[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Fri Jan 8 18:10:55 2021 +0100
+
+    Arrival and Departure Airports are fine but journey with a change is  not possible
+
+[33mcommit 98b6075938bebac91572e83d84f38d35d1a5b187[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Fri Jan 8 16:57:02 2021 +0100
+
+    13.4 Food2door without list of suppliers
+
+[33mcommit 57769f500b5916fdbc75b19f508f390ecbf7db46[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Fri Jan 8 15:49:23 2021 +0100
+
+    13.2
+
+[33mcommit e3ced73ce86db568c7d69dff5aa4bac423a2c8b2[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Fri Jan 8 09:24:53 2021 +0100
+
+    kodilla-good-patterns
+
+[33mcommit d554a2c58530c32edbfb490770eb712c7edd1996[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Fri Jan 8 09:23:36 2021 +0100
+
+    kodilla-testing
+
+[33mcommit f8700db3db53b766c692bbd56d3c4c3e6eb06b55[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Fri Jan 8 09:22:26 2021 +0100
+
+     kodilla-stream
+
+[33mcommit 8a9640d4a391768a24fd528822de3da66fa5d186[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Fri Jan 8 09:21:12 2021 +0100
+
+    rps
+
+[33mcommit 352fe1e0db930d66937a3c952b1607f4fa399f53[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Tue Dec 1 21:43:49 2020 +0100
+
+    rps first update
+
+[33mcommit cff48ce2f48aacd4bbcf15790196c1fca04afe2b[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Mon Nov 30 10:02:00 2020 +0100
+
+    8.4 update of method if for boolean result
+
+[33mcommit 1cd04e1b58dac614d02de0bc9594b555f5a406fd[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Mon Nov 30 05:09:39 2020 +0100
+
+    8.3 SecondChallenge folder changes from test into main
+
+[33mcommit f16d10eca37d481270fa5f205e4ce21a39285915[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Mon Nov 30 04:30:00 2020 +0100
+
+    8.4.RouteNotFoundException in Flight finder
+
+[33mcommit 226abf04de628f52995c0c77d6a5affdaaad6f87[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Fri Nov 27 11:18:01 2020 +0100
+
+    8.4 Exception Route Not Found changes in folders
+
+[33mcommit 56061f58327d0b2f8f6639cd7b14b3bcabbfbf87[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Thu Nov 26 22:13:24 2020 +0100
+
+    8.4 Exception Route Not Found
+
+[33mcommit 5b54419c57ebfcf35f15b2ad2070bfcaef60cd3a[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Wed Nov 25 14:34:28 2020 +0100
+
+    8.2. First usage of try, catch and finally
+
+[33mcommit 482ab5d1097528f78bf9ac0f2cd8911c921b48e2[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Tue Nov 24 11:24:09 2020 +0100
+
+    7.3 chnages in map
+
+[33mcommit cc05cff802d43c96e9e2562d3f5926d08b30ebcf[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Mon Nov 23 15:25:14 2020 +0100
+
+    7.5 Array Operations small changes
+
+[33mcommit 5082a2b3e8d25e03d103a48c898da1a8fd9582bb[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Mon Nov 23 15:22:47 2020 +0100
+
+    7.4 deletion of unnecessary code from class Country
+
+[33mcommit 8e6ab4422df152c7b49cbc4756ce82d506575982[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Mon Nov 23 14:28:22 2020 +0100
+
+    7.5 Int Stream on Array Operations
+
+[33mcommit a6584388e59c118da61dd75ed12a6e1e1e2c33d2[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Fri Nov 20 12:40:43 2020 +0100
+
+    7.6.testAddTaskListAverageWorkingOnTask
+
+[33mcommit 11358c1ee5bae678522fb067215d4bc381e0314d[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Thu Nov 19 18:53:28 2020 +0100
+
+    7.4 get People Quantity
+
+[33mcommit bcca097023bf7b31467c82f55dd2a3f1fe29910a[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Wed Nov 18 14:18:10 2020 +0100
+
+    7.2 Immutable ForumUser
+
+[33mcommit 3aa4dba8855893a4a64cef3d290e4517e51d6f48[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Wed Nov 18 11:38:34 2020 +0100
+
+    6.4 changes in test
+
+[33mcommit d5cb1d3f327f6df37d14de5942e58bffc67950f2[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Sat Nov 14 16:32:46 2020 +0100
+
+    6.6 listBooksInHandsOf
+
+[33mcommit 26fb71500a74994aeb646c3665d374d9231f681d[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Sat Nov 14 14:12:18 2020 +0100
+
+    6.3 OddNumbersExterminator
+
+[33mcommit 1d3505a887f7b27a111e6f76e4b6109abee1cac9[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Fri Nov 13 15:20:49 2020 +0100
+
+    6.3 Odd numbers exterminator
+
+[33mcommit 7578cbe33e43a9d63957a7ca9ec998946ca84437[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Fri Nov 13 12:59:24 2020 +0100
+
+    6.2. Calculator first unit test
+
+[33mcommit 9315dbd05c455f125655ef62b2bc30d78a7a9edd[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Fri Nov 13 12:29:48 2020 +0100
+
+    6.1 Added kodilla-testing module
+
+[33mcommit a98d6e6a107eef0e628ab891cafb63cb14d1cdb6[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Thu Nov 12 15:57:14 2020 +0100
+
+    6.1 Added kodilla-testing module
+
+[33mcommit 61cd5fe6493226f687627b83e0a0a182b216698f[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Wed Nov 11 13:31:56 2020 +0100
+
+    6.1 Added kodilla-testing module
+
+[33mcommit 39887fe3bb26709e4f4ca62c56b86a13375ca045[m
+Author: Anna Kołodziejczyk <anna.ak.kolodziejczyk@gmail.com>
+Date:   Wed Oct 28 17:54:14 2020 +0100
+
+    First Commit

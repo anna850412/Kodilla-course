@@ -76,22 +76,22 @@ public class BookDirectoryTestSuite {
     }
 
 
-    @Test
-    void testListBooksWithConditionFragmentShorterThan3() {
-        // Given
-        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);            // [2]
-        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);               // [3]
-        List<Book> resultListOf10Books = generateListOfNBooks(10);                    // [4]
-        when(libraryDatabaseMock.listBooksWithCondition(anyString()))                 // [5]
-                .thenReturn(resultListOf10Books);                                          // [6]
-
-        // When
-        List<Book> theListOfBooks10 = bookLibrary.listBooksWithCondition("An");       // [7]
-
-        // Then
-        assertEquals(0, theListOfBooks10.size());                                     // [8]
-        verify(libraryDatabaseMock, times(0)).listBooksWithCondition(anyString());
-    }
+//    @Test
+//    void testListBooksWithConditionFragmentShorterThan3() {
+//        // Given
+//        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);            // [2]
+//        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);               // [3]
+//        List<Book> resultListOf10Books = generateListOfNBooks(10);                    // [4]
+//        when(libraryDatabaseMock.listBooksWithCondition(anyString()))                 // [5]
+//                .thenReturn(resultListOf10Books);                                          // [6]
+//
+//        // When
+//        List<Book> theListOfBooks10 = bookLibrary.listBooksWithCondition("An");       // [7]
+//
+//        // Then
+//        assertEquals(0, theListOfBooks10.size());                                     // [8]
+//        verify(libraryDatabaseMock, times(0)).listBooksWithCondition(anyString());
+//    }
     @Test
     void testListBooksInHandsOfUserWithoutBook(){
         //Given
