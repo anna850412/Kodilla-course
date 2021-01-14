@@ -25,4 +25,12 @@ public abstract class Shop {
         }
         return results;
     }
+
+    @Override
+    public String toString() {
+        return "Shop{" +
+                "shopName='" + shopName + '\'' +
+                ", products=" + products +
+                '}';
+    }
 }

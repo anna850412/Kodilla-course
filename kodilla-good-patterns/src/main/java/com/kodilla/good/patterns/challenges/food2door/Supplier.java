@@ -28,4 +28,12 @@ public abstract class Supplier {
         }
         return new ResultDto(product, false);
     }
+
+    @Override
+    public String toString() {
+        return "Supplier{" +
+                "supplierName='" + supplierName + '\'' +
+                ", productList=" + productList +
+                '}';
+    }
 }
