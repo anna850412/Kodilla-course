@@ -16,5 +16,13 @@ public class OrderDto {
     public boolean isOrdered() {
         return isOrdered;
     }
+
+    @Override
+    public String toString() {
+        return "OrderDto{" +
+                "user=" + user +
+                ", isOrdered=" + isOrdered +
+                '}';
+    }
 }
 

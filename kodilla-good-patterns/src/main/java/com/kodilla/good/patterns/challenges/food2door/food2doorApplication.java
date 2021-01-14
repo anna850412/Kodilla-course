@@ -9,7 +9,10 @@ public class food2doorApplication {
     public static void main(String[] args) {
         OrderRequestRetriever orderRequestRetriever = new OrderRequestRetriever();
         OrderRequest orderRequest = orderRequestRetriever.retrieve();
-
+        OrderProcessor orderProcessor = new OrderProcessor(new MailService(),
+                new ProductOrderService(), new ProductOrderRepository());
+        OrderDto process = orderProcessor.process(orderRequest);
+        System.out.println(process);
         OrderResultDto orderResultDto = new OrderResultDto();
         Product product = new Product("onion", 'V', 2);
         Product product1 = new Product("apple", 'F', 10);
@@ -21,9 +24,6 @@ public class food2doorApplication {
 
         System.out.println(resultDto);
         System.out.println(resultDto1);
-        OrderProcessor orderProcessor = new OrderProcessor(new MailService(),
-                new ProductOrderService(), new ProductOrderRepository());
-        orderProcessor.process(orderRequest);
         List<Product> productList = new ArrayList<>();
         productList.add(product1);
         productList.add(product);

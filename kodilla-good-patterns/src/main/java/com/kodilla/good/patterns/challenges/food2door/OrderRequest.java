@@ -18,4 +18,12 @@ public class OrderRequest {
     public List<Product> getProductList() {
         return productList;
     }
+
+    @Override
+    public String toString() {
+        return "OrderRequest{" +
+                "user=" + user +
+                ", productList=" + productList +
+                '}';
+    }
 }

@@ -20,7 +20,7 @@ public class OrderProcessor {
             orderRepository.createOrder(orderRequest.getUser(), orderRequest.getProductList());
             return new OrderDto(orderRequest.getUser(), true);
         } else {
-            return new OrderDto(orderRequest.getUser(), false);
+            return new OrderDto(orderRequest.getUser(), true);
         }
     }
 }
