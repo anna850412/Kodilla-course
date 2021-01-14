@@ -55,5 +55,9 @@ public class CalculatorTestSuite {
         //Then
         Assertions.assertEquals(expectedResult, result);
     }
+    @Test
+    void contextLoads(){
+
+    }
 
 }
