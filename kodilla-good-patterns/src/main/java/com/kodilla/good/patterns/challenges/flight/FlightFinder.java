@@ -61,7 +61,7 @@ public class FlightFinder {
         };
             }
         }
-            return forEachFindStopoverAirport(searchedDepartureAirport, searchedArrivalAirport);
+            return flightStopover;
     }
 
     @Override
