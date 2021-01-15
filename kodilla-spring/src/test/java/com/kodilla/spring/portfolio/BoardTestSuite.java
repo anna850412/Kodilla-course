@@ -17,13 +17,13 @@ public class BoardTestSuite {
         board.getInProgressList().getTasks().add("still in progress");
         board.getDoneList().getTasks().add("already done");
         //When
-        TaskList result1 =  board.getToDoList();
-        TaskList result2 =  board.getInProgressList();
-        TaskList result3 =  board.getDoneList();
+        int result1 =  board.getToDoList().getTasks().size();
+        int result2 =  board.getInProgressList().getTasks().size();
+        String result3 =  board.getDoneList().getTasks().get(0);
 
         //Then
-        Assertions.assertEquals("to be done", result1);
-        Assertions.assertEquals("still in progress", result2);
+        Assertions.assertEquals(1, result1);
+        Assertions.assertEquals(1, result2);
         Assertions.assertEquals("already done", result3);
 
     }
