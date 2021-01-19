@@ -6,6 +6,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.Arrays;
+
 @SpringBootTest
 public class BoardTestSuite {
     @Test
@@ -25,6 +27,8 @@ public class BoardTestSuite {
         Assertions.assertEquals(1, result1);
         Assertions.assertEquals(1, result2);
         Assertions.assertEquals("already done", result3);
+        Arrays.stream(context.getBeanDefinitionNames())
+                .forEach(System.out::println);
 
     }
 }
