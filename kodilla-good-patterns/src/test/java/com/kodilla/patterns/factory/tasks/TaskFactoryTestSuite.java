@@ -29,7 +29,7 @@ public class TaskFactoryTestSuite {
         //When
         Task shopping = factory.makeTask(TaskFactory.SHOPPING);
         //Then
-        Assertions.assertEquals(true,shopping.isTaskExecuted());
         Assertions.assertEquals("Shopping task is executed",shopping.executeTask());
+        Assertions.assertEquals(true,shopping.isTaskExecuted());
     }
 }

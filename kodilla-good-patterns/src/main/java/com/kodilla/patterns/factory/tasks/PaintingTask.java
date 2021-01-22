@@ -1,9 +1,10 @@
 package com.kodilla.patterns.factory.tasks;
 
 public class PaintingTask implements Task {
-    String taskName;
-    String color;
-    String whatToPaint;
+    private String taskName;
+    private String color;
+    private String whatToPaint;
+    private boolean isExecuted;
 
     public PaintingTask(String taskName, String color, String whatToPaint) {
         this.taskName = taskName;
@@ -13,6 +14,7 @@ public class PaintingTask implements Task {
 
     @Override
     public String executeTask() {
+        isExecuted = true;
         return "Painting task is executed";
     }
 
@@ -23,6 +25,6 @@ public class PaintingTask implements Task {
 
     @Override
     public boolean isTaskExecuted() {
-        return false;
+        return isExecuted;
     }
 }
