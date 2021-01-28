@@ -21,8 +21,8 @@ public class StreamMain {
         poemBeautifier.beautify("Welcome in my World", (text) ->text.replace("World", "Life"));
 
         Calculator calculator = new Calculator();
-        calculator.calculate(5,2, (a,b)-> a +b);
-        calculator.calculate(5,2, (a,b)-> a *b);
+        calculator.calculate(5,2, (a,b)-> a + b);
+        calculator.calculate(5,2, (a,b)-> a * b);
 
         List<ForumUser> forumUserList;
         ForumUser forumUser1 = new ForumUser(1,"Smith",'M',2000,3,25,0);
