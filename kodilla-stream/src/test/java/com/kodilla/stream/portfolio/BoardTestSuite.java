@@ -160,7 +160,8 @@ class BoardTestSuite {
 
         Long numberOfTasks = project.getTaskLists().stream()
                 .filter(taskLists -> taskLists.getName().equals("In progress"))
-                .flatMap(taskList -> taskList.getTasks().stream()).count();
+                .flatMap(taskList -> taskList.getTasks().stream())
+                .count();
         IntStream.range(0, 23).forEach(System.out::println);
         Long average = sumOfDaysBetweenTodayAndTaskCreated / numberOfTasks;
 

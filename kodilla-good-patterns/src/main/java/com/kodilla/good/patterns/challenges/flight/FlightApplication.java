@@ -26,6 +26,9 @@ public class FlightApplication {
         System.out.println(flightsToBerlin);
         System.out.println("Loty z Warszawy do Paryża z przesiadką");
         System.out.println(flightsFromWarszawaToParyż);
+        Set<Flight> forEachFindStopoverAirport = flightFinder.forEachFindStopoverAirport("Warszawa", "Paryż");
+        System.out.println("Loty z Warszawy do Paryża z przesiadką z użyciem pętli");
+        System.out.println(forEachFindStopoverAirport);
 
     }
 }

@@ -1,10 +1,10 @@
 package com.kodilla.stream;
 
 import com.kodilla.stream.beautifier.PoemBeautifier;
-import com.kodilla.stream.beautifier.PoemDecorator;
 import com.kodilla.stream.calculator.Calculator;
 import com.kodilla.stream.forumuser.Forum;
 import com.kodilla.stream.forumuser.ForumUser;
+import com.kodilla.stream.person.People;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -14,6 +14,13 @@ import java.util.stream.Collectors;
 
 public class StreamMain {
     public static void main(String[] args) {
+        People people= new People();
+        People.getList().stream()
+                .map(String::toUpperCase)
+                .filter(s->s.length()>11)
+                .map(s->s.substring(0,s.indexOf(' ')+2) + ".")
+                .filter(s->s.substring(0,1).equals("M"))
+                .forEach(System.out::println);
         PoemBeautifier poemBeautifier = new PoemBeautifier();
         poemBeautifier.beautify("Welcome in my World", (text) -> "ABC" + " " + text + " " + "ABC");
         poemBeautifier.beautify("My Name is Anna", String::toUpperCase);
