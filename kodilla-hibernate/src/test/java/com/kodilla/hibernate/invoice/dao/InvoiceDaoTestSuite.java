@@ -20,23 +20,30 @@ public class InvoiceDaoTestSuite {
     void testInvoiceDaoSave(){
         //Given
         Product product1 = new Product("tv");
-        Product product2 = new Product("computer");
-        Product product3 = new Product("mouse");
+
         Item item1 = new Item(product1, new BigDecimal(1000),2,new BigDecimal(500));
-        Item item2 = new Item(product2, new BigDecimal(700),2,new BigDecimal(500));
-        Item item3 = new Item(product3, new BigDecimal(50),2,new BigDecimal(40));
-        Item item4 = new Item(product2, new BigDecimal(20),2,new BigDecimal(10));
+        Item item2 = new Item(product1, new BigDecimal(700),2,new BigDecimal(500));
+        Item item3 = new Item(product1, new BigDecimal(50),2,new BigDecimal(40));
+        Item item4 = new Item(product1, new BigDecimal(20),2,new BigDecimal(10));
         List<Item> itemList = new ArrayList<>();
         itemList.add(item1);
         itemList.add(item2);
         itemList.add(item3);
         itemList.add(item4);
         Invoice invoice = new Invoice("1",itemList);
+        item1.setInvoice(invoice);
+        item2.setInvoice(invoice);
+        item3.setInvoice(invoice);
+        item4.setInvoice(invoice);
+        product1.setItems(itemList);
+
         //When
         invoiceDao.save(invoice);
         int id = invoice.getId();
         //Then
-        Assertions.assertEquals(0, id);
+        Assertions.assertEquals("1", invoice.getNumber() );
+        Assertions.assertEquals(4, invoice.getItems().size() );
+
         //CleanUp
         invoiceDao.deleteById(id);
     }

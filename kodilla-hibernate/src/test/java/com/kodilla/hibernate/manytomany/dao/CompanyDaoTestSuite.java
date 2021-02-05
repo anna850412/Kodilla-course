@@ -47,7 +47,7 @@ class CompanyDaoTestSuite {
         int dataMaestersId = dataMaesters.getId();
         companyDao.save(greyMatter);
         int greyMatterId = greyMatter.getId();
-        List<Employee> expectedEmployeeName = employeeDao.selectEmployeeName();
+        List<Employee> expectedEmployeeName = employeeDao.selectEmployeeName("Smith");
         List<Company> expectedCompanyName = companyDao.selectFirstThreeDigitsFromCompanyName("Sof");
 
         //Then
