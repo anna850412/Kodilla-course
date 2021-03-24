@@ -4,6 +4,7 @@ import com.sun.istack.NotNull;
 import org.springframework.lang.NonNull;
 
 import javax.persistence.*;
+import java.time.LocalTime;
 import java.util.Date;
 @Entity
 @Table(name="TASKS")
@@ -11,15 +12,16 @@ public class Task {
 
     private int id;
     private String description;
-    private Date created;
+    private LocalTime created;
     private int duration;
 
     public Task() {
+        this.created = LocalTime.now();
     }
 
     public Task(String description, int duration) {
         this.description = description;
-        this.created = new Date();
+        this.created = LocalTime.now();
         this.duration = duration;
     }
     @Id
@@ -35,7 +37,7 @@ public class Task {
     }
     @NotNull
     @Column(name = "CREATED")
-    public Date getCreated() {
+    public LocalTime getCreated() {
         return created;
     }
     @Column(name = "DURATION")
@@ -47,11 +49,11 @@ public class Task {
         this.id = id;
     }
 
-    private void setDescription(String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
-    private void setCreated(Date created) {
+    private void setCreated(LocalTime created) {
         this.created = created;
     }
 

@@ -41,8 +41,6 @@ public class Product {
         this.name = name;
     }
 
-    //    @ManyToOne
-    //    @JoinColumn(name = "ITEMS_ID")
     @OneToMany(
             targetEntity = Item.class,
             mappedBy = "product",

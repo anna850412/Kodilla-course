@@ -1,10 +1,10 @@
 package com.kodilla.hibernate.invoice;
 
 import com.sun.istack.NotNull;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+
 @Entity
 @Table(name = "ITEMS")
 public class Item {
@@ -24,6 +24,7 @@ public class Item {
         this.quantity = quantity;
         this.value = value;
     }
+
     @Id
     @GeneratedValue
     @NotNull
@@ -35,13 +36,8 @@ public class Item {
     public void setId(int id) {
         this.id = id;
     }
-//    @OneToMany(
-//            targetEntity = Product.class,
-//            mappedBy = "item",
-//            cascade = CascadeType.ALL,
-//            fetch = FetchType.LAZY
-//    )
-    @ManyToOne (cascade = CascadeType.ALL)
+
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "PRODUCTS_ID")
     public Product getProduct() {
         return product;
@@ -75,6 +71,7 @@ public class Item {
     public void setValue(BigDecimal value) {
         this.value = value;
     }
+
     @ManyToOne
     @JoinColumn(name = "INVOICES_ID")
     public Invoice getInvoice() {

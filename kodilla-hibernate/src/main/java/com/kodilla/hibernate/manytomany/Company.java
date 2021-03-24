@@ -1,16 +1,26 @@
 package com.kodilla.hibernate.manytomany;
 
+import org.springframework.stereotype.Service;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
-
-@NamedNativeQuery(
-        name = "Company.selectFirstThreeDigitsFromCompanyName",
-        query = "SELECT * FROM COMPANIES\n" +
-                "WHERE LEFT (company_name, 3) LIKE :name",
-        resultClass = Company.class
-)
+@Service
+@NamedNativeQueries({
+        @NamedNativeQuery(
+                name = "Company.selectFirstThreeDigitsFromCompanyName",
+                query = "SELECT * FROM COMPANIES\n" +
+                        "WHERE LEFT (company_name, 3) LIKE company_name",
+                resultClass = Company.class
+        ),
+        @NamedNativeQuery(
+                name = "Company.selectCompanyByPartOfTheName",
+                query = "SELECT * FROM COMPANIES\n" +
+                        "WHERE company_name LIKE '%ter%'",
+                resultClass = Company.class
+        )
+})
 @Entity
 @Table(name = "COMPANIES")
 public class Company {

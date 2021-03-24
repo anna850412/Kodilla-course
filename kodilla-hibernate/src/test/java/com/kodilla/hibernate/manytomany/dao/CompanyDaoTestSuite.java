@@ -66,4 +66,5 @@ class CompanyDaoTestSuite {
             //do nothing
         }
     }
+
 }

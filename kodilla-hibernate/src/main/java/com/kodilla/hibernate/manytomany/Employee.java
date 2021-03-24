@@ -1,13 +1,22 @@
 package com.kodilla.hibernate.manytomany;
 
+import org.springframework.stereotype.Service;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
-@NamedQuery(
-        name = "Employee.selectEmployeeName",
-        query = "FROM Employee WHERE lastname  LIKE '%Smith%'"
-)
+@Service
+@NamedQueries({
+        @NamedQuery(
+                name = "Employee.selectEmployeeName",
+                query = "FROM Employee WHERE lastname  LIKE'%Smith%'"
+        ),
+        @NamedQuery(
+                name = "Employee.selectEmployeeByPartOfTheSurname",
+                query = "FROM Employee WHERE lastname LIKE'%mit%'"
+        )
+})
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
@@ -23,6 +32,7 @@ public class Employee {
     public Employee(String firstname, String lastname) {
         this.firstname = firstname;
         this.lastname = lastname;
+
     }
 
     @Id
@@ -44,6 +54,7 @@ public class Employee {
     public String getLastname() {
         return lastname;
     }
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "JOIN_COMPANY_EMPLOYEE",

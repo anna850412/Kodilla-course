@@ -3,12 +3,13 @@ package com.kodilla.hibernate.tasklist.dao;
 import com.kodilla.hibernate.taskList.TaskList;
 import com.kodilla.hibernate.taskList.dao.TaskListDao;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
-
+@Disabled
 @SpringBootTest
 public class TaskListDaoTestSuite {
     @Autowired
@@ -25,14 +26,14 @@ public class TaskListDaoTestSuite {
         //When
         List<TaskList> readTaskList = taskListDao.findByListName(listName);
         //Then
-        Assertions.assertEquals(1, readTaskList.size());
+        Assertions.assertEquals(5, readTaskList.size());
         //CleanUp
         int id = readTaskList.get(1).getId();
-        int id2 = readTaskList.get(2).getId();
-        int id3 = readTaskList.get(3).getId();
+//        int id2 = readTaskList.get(2).getId();
+//        int id3 = readTaskList.get(3).getId();
 
         taskListDao.deleteById(id);
-        taskListDao.deleteById(id2);
-        taskListDao.deleteById(id3);
+//        taskListDao.deleteById(id2);
+//        taskListDao.deleteById(id3);
     }
 }

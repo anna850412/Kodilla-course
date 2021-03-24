@@ -1,7 +1,6 @@
 package com.kodilla.hibernate.invoice;
 
 import com.sun.istack.NotNull;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -21,6 +20,7 @@ public class Invoice {
         this.number = number;
         this.items = items;
     }
+
     @Id
     @GeneratedValue
     @NotNull
@@ -32,6 +32,7 @@ public class Invoice {
     public void setId(int id) {
         this.id = id;
     }
+
     @Column(name = "NUMBER")
     public String getNumber() {
         return number;
@@ -40,6 +41,7 @@ public class Invoice {
     public void setNumber(String number) {
         this.number = number;
     }
+
     @OneToMany(
             targetEntity = Item.class,
             mappedBy = "invoice",
@@ -53,4 +55,5 @@ public class Invoice {
     public void setItems(List<Item> items) {
         this.items = items;
     }
+
 }
