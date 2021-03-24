@@ -52,17 +52,21 @@ public class FacadeTestSuite {
         companyDao.save(greyMatter);
         int greyMatterId = greyMatter.getId();
         List<Employee> expectedEmployeeName = employeeDao.selectEmployeeByPartOfTheSurname("mit");
+        int employeeNameId = expectedEmployeeName.lastIndexOf(employeeDao);
+        System.out.println("EmployeeNameId" + employeeNameId);
         //Then
         assertNotEquals(0, softwareMachineId);
         assertNotEquals(0, dataMaestersId);
         assertNotEquals(0, greyMatterId);
         assertEquals(1, expectedEmployeeName.size());
-//        assertEquals("mit", expectedEmployeeName.get(0).getFirstname().toString());
+//
         //CleanUp?
         try {
+
             companyDao.deleteById(softwareMachineId);
             companyDao.deleteById(dataMaestersId);
             companyDao.deleteById(greyMatterId);
+            employeeDao.deleteById(employeeNameId);
         } catch (Exception e) {
             //do nothing
         }
@@ -103,6 +107,9 @@ public class FacadeTestSuite {
         companyDao.save(greyMatter);
         int greyMatterId = greyMatter.getId();
         List<Company> expectedCompanyName = companyDao.selectCompanyByPartOfTheName("ter");
+        int companyNameId = expectedCompanyName.indexOf(companyDao);
+        System.out.println("CompanyNameId" + companyNameId);
+
         //Then
         assertNotEquals(0, softwareMachineId);
         assertNotEquals(0, dataMaestersId);
@@ -110,16 +117,14 @@ public class FacadeTestSuite {
         assertEquals(2,expectedCompanyName.size());
         //CleanUp?
         try {
+
             companyDao.deleteById(softwareMachineId);
             companyDao.deleteById(dataMaestersId);
             companyDao.deleteById(greyMatterId);
+            companyDao.deleteById(companyNameId);
         } catch (Exception e) {
             //do nothing
         }
-//        try {
-//            companyFacade.selectCompanyByPartOfTheName();
-//        } catch (CompanyException e){
-//            System.out.println("Please correct company name");
-//        }
+//
     }
 }
