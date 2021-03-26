@@ -10,11 +10,11 @@ import java.util.List;
 @NamedQueries({
         @NamedQuery(
                 name = "Employee.selectEmployeeName",
-                query = "FROM Employee WHERE lastname  LIKE'%Smith%'"
+                query = "FROM Employee WHERE lastname  LIKE :lastname"
         ),
         @NamedQuery(
                 name = "Employee.selectEmployeeByPartOfTheSurname",
-                query = "FROM Employee WHERE lastname LIKE'%mit%'"
+                query = "FROM Employee WHERE lastname LIKE concat('%',:param, '%')"
         )
 })
 @Entity

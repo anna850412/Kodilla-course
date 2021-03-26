@@ -52,8 +52,8 @@ public class FacadeTestSuite {
         companyDao.save(greyMatter);
         int greyMatterId = greyMatter.getId();
         List<Employee> expectedEmployeeName = employeeDao.selectEmployeeByPartOfTheSurname("mit");
-        int employeeNameId = expectedEmployeeName.lastIndexOf(employeeDao);
-        System.out.println("EmployeeNameId" + employeeNameId);
+//        int employeeNameId = expectedEmployeeName.lastIndexOf(employeeDao);
+//        System.out.println("EmployeeNameId" + employeeNameId);
         //Then
         assertNotEquals(0, softwareMachineId);
         assertNotEquals(0, dataMaestersId);
@@ -66,7 +66,7 @@ public class FacadeTestSuite {
             companyDao.deleteById(softwareMachineId);
             companyDao.deleteById(dataMaestersId);
             companyDao.deleteById(greyMatterId);
-            employeeDao.deleteById(employeeNameId);
+//            employeeDao.deleteById(employeeNameId);
         } catch (Exception e) {
             //do nothing
         }
@@ -107,8 +107,8 @@ public class FacadeTestSuite {
         companyDao.save(greyMatter);
         int greyMatterId = greyMatter.getId();
         List<Company> expectedCompanyName = companyDao.selectCompanyByPartOfTheName("ter");
-        int companyNameId = expectedCompanyName.indexOf(companyDao);
-        System.out.println("CompanyNameId" + companyNameId);
+//        int companyNameId = expectedCompanyName.indexOf(companyDao);
+//        System.out.println("CompanyNameId" + companyNameId);
 
         //Then
         assertNotEquals(0, softwareMachineId);
@@ -121,7 +121,7 @@ public class FacadeTestSuite {
             companyDao.deleteById(softwareMachineId);
             companyDao.deleteById(dataMaestersId);
             companyDao.deleteById(greyMatterId);
-            companyDao.deleteById(companyNameId);
+//            companyDao.deleteById(companyNameId);
         } catch (Exception e) {
             //do nothing
         }
