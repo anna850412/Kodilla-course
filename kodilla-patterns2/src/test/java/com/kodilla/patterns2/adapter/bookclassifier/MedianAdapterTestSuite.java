@@ -27,8 +27,8 @@ public class MedianAdapterTestSuite {
         MedianAdapter medianAdapter = new MedianAdapter();
 
         //When
-        int expectedMedian = medianAdapter.medianPublicationYear((Map<BookSignature, com.kodilla.patterns2.adapter.bookclassifier.libraryb.Book>) bookSet);
+        int expectedMedian = medianAdapter.publicationYearMedian(bookSet);
         //Then
-        assertEquals(expectedMedian, 2015);
+        assertEquals(expectedMedian, 2020);
     }
 }
