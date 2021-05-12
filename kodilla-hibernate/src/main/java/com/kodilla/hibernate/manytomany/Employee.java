@@ -1,12 +1,11 @@
 package com.kodilla.hibernate.manytomany;
 
-import org.springframework.stereotype.Service;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
-@Service
+
 @NamedQueries({
         @NamedQuery(
                 name = "Employee.selectEmployeeName",
@@ -58,9 +57,9 @@ public class Employee {
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "JOIN_COMPANY_EMPLOYEE",
-            joinColumns = {@JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "ID"               )},
-                    inverseJoinColumns = {@JoinColumn(name = "COMPANY_ID", referencedColumnName = "ID")}
-            )
+            joinColumns = {@JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "ID")},
+            inverseJoinColumns = {@JoinColumn(name = "COMPANY_ID", referencedColumnName = "ID")}
+    )
     public List<Company> getCompanies() {
         return companies;
     }

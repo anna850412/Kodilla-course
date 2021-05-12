@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @Disabled
 public class DbManagerTestSuite {
 
-    @Test
+    @org.junit.Test
     void testConnect() throws SQLException {
         //Given
         //When
@@ -21,6 +21,7 @@ public class DbManagerTestSuite {
         //Then
         Assertions.assertNotNull(dbManager.getConnection());
     }
+
     @Test
     void testSelectUsers() throws SQLException {
         //Given
@@ -42,6 +43,7 @@ public class DbManagerTestSuite {
         statement.close();
         assertEquals(5, counter);
     }
+
     @Test
     void testSelectUsersAndPosts() throws SQLException {
         //Given
@@ -56,14 +58,14 @@ public class DbManagerTestSuite {
         ResultSet rs = statement.executeQuery(sqlQuery);
         //Then
         int counter = 0;
-        while (rs.next()){
+        while (rs.next()) {
             System.out.println(rs.getInt("POSTS_NUMBER") + ", " +
-                        rs.getString("FIRSTNAME") + ", " +
-                        rs.getString("LASTNAME"));
-            counter ++;
+                    rs.getString("FIRSTNAME") + ", " +
+                    rs.getString("LASTNAME"));
+            counter++;
         }
         rs.close();
         statement.close();
-        assertEquals(2,counter);
+        assertEquals(2, counter);
     }
 }
