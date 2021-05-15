@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmployeeFacade {
     private static final Logger LOGGER = LoggerFactory.getLogger(CompanyFacade.class);
+    @Autowired
+    @SuppressWarnings("SpringJavaAutowiringInspection")
     private Employee employee;
 
     @Autowired
