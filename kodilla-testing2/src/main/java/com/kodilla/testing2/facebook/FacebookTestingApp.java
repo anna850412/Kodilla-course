@@ -7,16 +7,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class FacebookTestingApp {
-
-    ///html/body/div[3]/div[2]/div/div/div/div/div[3]/button[2]
-    public static final String XPATH_COOKIES = "//*[@data-testid='cookie-policy-dialog-accept-button']";
-    //    public static final String XPATH_COOKIES = "//div[contains(@class,\"selected_51sy\") and contains(@data-cookiebanner,\"accept_button\")/button[2]";
+//    /html/body/div[3]/div[2]/div/div/div/div/div[3]/button[2]
+//    public static final String XPATH_COOKIES = "//div[contains(@class,\"selected_51sy\") and contains(@data-cookiebanner,\"accept_button\")/button[2]";
 //    public static final String XPATH_COOKIES = "//div[contains(@class,\"_90-r\")/button[2]";
-//    public static final String XPATH_CREATE_NEW_ACCOUNT = "//div[contains(@class, \"selected_51sy\")]/div[9]/form/div";
-    public static final String XPATH_CREATE_NEW_ACCOUNT = "//*[@data-testid='open-registration-form-button']";
-//    public static final String XPATH_DAY = "//div[contains(@class, \"_5k_5\")]/span[2]/select[1]";
+//    public static final String XPATH_CREATE_NEW_ACCOUNT = "//div[contains(@class, \"selected_51sy\")]/div[9]/form/div";//    public static final String XPATH_DAY = "//div[contains(@class, \"_5k_5\")]/span[2]/select[1]";
 //    public static final String XPATH_MONTH = "//div[contains(@class, \"_5k_5\")]/span[2]/select[2]";
 //    public static final String XPATH_YEAR = "//div[contains(@class, \"_5k_5\")]/span[2]/select[3]";
+    public static final String XPATH_COOKIES = "//*[@data-testid='cookie-policy-dialog-accept-button']";
+    public static final String XPATH_CREATE_NEW_ACCOUNT = "//*[@data-testid='open-registration-form-button']";
     public static final String XPATH_DAY = "//*[@id=\"day\"]";
     public static final String XPATH_MONTH = "//*[@id=\"month\"]";
     public static final String XPATH_YEAR = "//*[@id=\"year\"]";
