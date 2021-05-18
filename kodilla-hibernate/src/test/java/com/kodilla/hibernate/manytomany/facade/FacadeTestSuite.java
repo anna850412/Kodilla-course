@@ -12,6 +12,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
 @SpringBootTest
 public class FacadeTestSuite {
     @Autowired
@@ -22,83 +23,31 @@ public class FacadeTestSuite {
     private EmployeeDao employeeDao;
     @Autowired
     private CompanyDao companyDao;
+
     @Test
-    void testEmployeeSelectByPartOfTheSurname(){
+    void testEmployeeSelectByPartOfTheSurname() throws EmployeeException {
         //Given
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
         Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
-
-        Company softwareMachine = new Company("Software Machine");
-        Company dataMaesters = new Company("Data Maesters");
-        Company greyMatter = new Company("Grey Matter");
-
-        softwareMachine.getEmployees().add(johnSmith);
-        dataMaesters.getEmployees().add(stephanieClarckson);
-        dataMaesters.getEmployees().add(lindaKovalsky);
-        greyMatter.getEmployees().add(johnSmith);
-        greyMatter.getEmployees().add(lindaKovalsky);
-
-        johnSmith.getCompanies().add(softwareMachine);
-        johnSmith.getCompanies().add(greyMatter);
-        stephanieClarckson.getCompanies().add(dataMaesters);
-        lindaKovalsky.getCompanies().add(dataMaesters);
-        lindaKovalsky.getCompanies().add(greyMatter);
         //When
-        companyDao.save(softwareMachine);
-        int softwareMachineId = softwareMachine.getId();
-        companyDao.save(dataMaesters);
-        int dataMaestersId = dataMaesters.getId();
-        companyDao.save(greyMatter);
-        int greyMatterId = greyMatter.getId();
-        List<Employee> expectedEmployeeName = employeeDao.selectEmployeeByPartOfTheSurname("mit");
-//        int employeeNameId = expectedEmployeeName.lastIndexOf(employeeDao);
-//        System.out.println("EmployeeNameId" + employeeNameId);
+        employeeDao.save(johnSmith);
+        employeeDao.save(stephanieClarckson);
+        employeeDao.save(lindaKovalsky);
+        List<Employee> expectedEmployeeName = employeeFacade.selectEmployeeByPartOfTheSurname("mit");
         //Then
-        assertNotEquals(0, softwareMachineId);
-        assertNotEquals(0, dataMaestersId);
-        assertNotEquals(0, greyMatterId);
         assertEquals(1, expectedEmployeeName.size());
-//
-        //CleanUp?
-        try {
-
-            companyDao.deleteById(softwareMachineId);
-            companyDao.deleteById(dataMaestersId);
-            companyDao.deleteById(greyMatterId);
-//            employeeDao.deleteById(employeeNameId);
-        } catch (Exception e) {
-            //do nothing
-        }
-//        try {
-//            employeeFacade.selectEmployeeByPartOfTheSurname();
-//        } catch (EmployeeException e){
-//            System.out.println("Please correct employee surname");
-//        }
-
+        //CleanUp
+        employeeDao.deleteAll();
     }
-    @Test
-    void testCompanySelectByPartOfTheName(){
-        //Given
-        Employee johnSmith = new Employee("John", "Smith");
-        Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
-        Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
 
+    @Test
+    void testCompanySelectByPartOfTheName() throws CompanyException {
+        //Given
         Company softwareMachine = new Company("Software Machine");
         Company dataMaesters = new Company("Data Maesters");
         Company greyMatter = new Company("Grey Matter");
 
-        softwareMachine.getEmployees().add(johnSmith);
-        dataMaesters.getEmployees().add(stephanieClarckson);
-        dataMaesters.getEmployees().add(lindaKovalsky);
-        greyMatter.getEmployees().add(johnSmith);
-        greyMatter.getEmployees().add(lindaKovalsky);
-
-        johnSmith.getCompanies().add(softwareMachine);
-        johnSmith.getCompanies().add(greyMatter);
-        stephanieClarckson.getCompanies().add(dataMaesters);
-        lindaKovalsky.getCompanies().add(dataMaesters);
-        lindaKovalsky.getCompanies().add(greyMatter);
         //When
         companyDao.save(softwareMachine);
         int softwareMachineId = softwareMachine.getId();
@@ -106,25 +55,19 @@ public class FacadeTestSuite {
         int dataMaestersId = dataMaesters.getId();
         companyDao.save(greyMatter);
         int greyMatterId = greyMatter.getId();
-        List<Company> expectedCompanyName = companyDao.selectCompanyByPartOfTheName("ter");
-//        int companyNameId = expectedCompanyName.indexOf(companyDao);
-//        System.out.println("CompanyNameId" + companyNameId);
+        List<Company> expectedCompanyName = companyFacade.selectCompanyByPartOfTheName("ter");
 
         //Then
         assertNotEquals(0, softwareMachineId);
         assertNotEquals(0, dataMaestersId);
         assertNotEquals(0, greyMatterId);
-        assertEquals(2,expectedCompanyName.size());
+        assertEquals(2, expectedCompanyName.size());
         //CleanUp?
-        try {
-
-            companyDao.deleteById(softwareMachineId);
-            companyDao.deleteById(dataMaestersId);
-            companyDao.deleteById(greyMatterId);
-//            companyDao.deleteById(companyNameId);
-        } catch (Exception e) {
-            //do nothing
-        }
+        companyDao.deleteAll();
 //
+//        companyDao.deleteById(softwareMachineId);
+//        companyDao.deleteById(dataMaestersId);
+//        companyDao.deleteById(greyMatterId);
+
     }
 }

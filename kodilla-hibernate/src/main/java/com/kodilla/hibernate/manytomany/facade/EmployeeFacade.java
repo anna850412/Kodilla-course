@@ -1,24 +1,19 @@
 package com.kodilla.hibernate.manytomany.facade;
 
 import com.kodilla.hibernate.manytomany.Employee;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.kodilla.hibernate.manytomany.dao.EmployeeDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
-@Service
+import java.util.List;
+
+@Repository
 public class EmployeeFacade {
-    private static final Logger LOGGER = LoggerFactory.getLogger(CompanyFacade.class);
-    @Autowired
-    @SuppressWarnings("SpringJavaAutowiringInspection")
-    private Employee employee;
 
     @Autowired
-    public EmployeeFacade(Employee employee) {
-        this.employee = employee;
-    }
+    EmployeeDao employeeDao;
 
-    public void selectEmployeeByPartOfTheSurname() throws EmployeeException {
-
+    List<Employee> selectEmployeeByPartOfTheSurname(String param) throws EmployeeException {
+        return employeeDao.selectEmployeeByPartOfTheSurname(param);
     }
 }
