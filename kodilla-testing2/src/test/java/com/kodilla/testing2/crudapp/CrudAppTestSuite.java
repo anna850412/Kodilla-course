@@ -70,6 +70,7 @@ public class CrudAppTestSuite {
                     buttonCreateCard.click();                                  // [13]
                 });                                                            // [14]
         Thread.sleep(5000);
+        driver.switchTo().alert().accept();
     }
 
     private boolean checkTaskExistsInTrello(String taskName) throws InterruptedException {
@@ -104,6 +105,7 @@ public class CrudAppTestSuite {
     }
 
     private void deleteTaskFromCrudApp(String taskName) throws InterruptedException {
+        Thread.sleep(4000);
         while (!driver.findElement(By.xpath("//select[1]")).isDisplayed());
         Thread.sleep(4000);
 
